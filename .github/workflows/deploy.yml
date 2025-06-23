@@ -21,7 +21,7 @@ jobs:
       - name: ⚙️ Execute Deployment SSH Command
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.VPS_HOST }}
+          host: vps-3258627-x.dattaweb.com
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
