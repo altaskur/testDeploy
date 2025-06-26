@@ -27,5 +27,11 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
             cd /var/www/html/proyects/
-            git clone ${{ secrets.VPS_REPO_URL }}
-            cd ${{ secrets.VPS_REPO_NAME }}
+            if [ -d "nombre-del-repo/.git" ]; then
+              echo "El repositorio ya existe, haciendo pull..."
+              cd nombre-del-repo
+              git pull
+            else
+              echo "El repositorio no existe, haciendo clone..."
+              git clone ${{ secrets.VPS_REPO_URL }}
+            fi
