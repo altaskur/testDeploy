@@ -26,6 +26,6 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
-            cd /var/www/html/projects/
+            cd /var/www/html/proyects/
             git clone ${{ secrets.VPS_REPO_URL }}
             cd ${{ secrets.VPS_REPO_NAME }}
